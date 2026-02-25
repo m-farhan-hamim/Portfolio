@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story of M. Farhan Hamim | PSBDx CEO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #08080a;
+            color: #e5e7eb;
+        }
+
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        /* Simple Float Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-svg { animation: float 3s ease-in-out infinite; }
+
+        /* Rotate Animation for Ninja Tools */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-svg { 
+            transform-origin: center;
+            animation: spin 10s linear infinite; 
+        }
+
+        /* Pulse for Logic Gate */
+        @keyframes pulse-glow {
+            0% { filter: drop-shadow(0 0 2px #ff7b00); opacity: 0.6; }
+            50% { filter: drop-shadow(0 0 10px #ff7b00); opacity: 1; }
+            100% { filter: drop-shadow(0 0 2px #ff7b00); opacity: 0.6; }
+        }
+        .pulse-logic { animation: pulse-glow 2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="selection:bg-orange-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="py-10 px-6 text-center border-b border-white/5 bg-darkCard/30">
+        <a href="index.html" class="text-gray-500 hover:text-orange-500 transition-colors text-sm font-bold uppercase tracking-widest">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Main System
+        </a>
+        <h1 class="text-4xl md:text-6xl font-black mt-6 tracking-tighter">THE <span class="text-orange-500">NINJA</span> LOG.</h1>
+        <p class="text-gray-500 mt-2 font-mono">Subject: M. Farhan Hamim // Founder & CEO</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16 space-y-24">
+
+        <!-- Chapter 1: The Spark -->
+        <section class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 svg-container">
+                <!-- SVG: Infinite Knowledge Eye/Book -->
+                <svg width="180" height="180" viewBox="0 0 200 200" class="float-svg">
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#ff7b00" stroke-width="2" stroke-dasharray="10,5" />
+                    <path d="M60 100 Q100 40 140 100 Q100 160 60 100" fill="none" stroke="#ff7b00" stroke-width="4">
+                        <animate attributeName="stroke-dashoffset" from="400" to="0" dur="5s" repeatCount="indefinite" />
+                    </path>
+                    <circle cx="100" cy="100" r="15" fill="#ff7b00">
+                        <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <text x="100" y="160" text-anchor="middle" fill="#ff7b00" font-family="monospace" font-size="12">INFINITE_LEARNING</text>
+                </svg>
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-2xl font-black mb-4 flex items-center gap-3">
+                    <span class="bg-orange-500 text-black px-2 py-1 rounded text-sm">01</span> THE AWAKENING
+                </h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Born on <strong>January 15, 2011</strong>, in Bangladesh, my journey didn't start with a plan, but with a question. I entered the tech world simply because I have a deep hunger to learn new things. 
+                </p>
+                <p class="text-gray-400 mt-4">
+                    I found that coding isn't just a skill—it's an infinite universe. Every line of code I write is a step further into a world where anything is possible.
+                </p>
+            </div>
+        </section>
+
+        <!-- Chapter 2: The Lone Ninja Philosophy -->
+        <section class="flex flex-col md:flex-row-reverse items-center gap-12">
+            <div class="w-full md:w-1/2 svg-container">
+                <!-- SVG: Shuriken / Ninja Way -->
+                <svg width="180" height="180" viewBox="0 0 200 200" class="spin-svg">
+                    <path d="M100 20 L120 80 L180 100 L120 120 L100 180 L80 120 L20 100 L80 80 Z" fill="#dc2626" />
+                    <circle cx="100" cy="100" r="20" fill="#08080a" />
+                    <circle cx="100" cy="100" r="10" fill="#dc2626" />
+                </svg>
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-2xl font-black mb-4 flex items-center gap-3">
+                    <span class="bg-red-600 text-black px-2 py-1 rounded text-sm">02</span> MY NINDŌ
+                </h2>
+                <p class="text-gray-400 leading-relaxed">
+                    I've always worked on my own way. Sometimes it doesn't match what others expect, but I don't see that as a flaw—it's my unique point. 
+                </p>
+                <p class="text-gray-400 mt-4">
+                    My life resonates with <strong>Naruto and Gaara</strong>. Like them, I faced a path where I had to define myself. I don't follow the crowd; I build the road.
+                </p>
+            </div>
+        </section>
+
+        <!-- Chapter 3: The Empire & The Script -->
+        <section class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 svg-container">
+                <!-- SVG: Profit Gate -->
+                <svg width="180" height="180" viewBox="0 0 200 200">
+                    <rect x="40" y="70" width="120" height="60" rx="10" fill="none" stroke="#3776AB" stroke-width="3" class="pulse-logic" />
+                    <text x="100" y="105" text-anchor="middle" fill="#3776AB" font-family="monospace" font-weight="bold" font-size="14">PROFIT == TRUE</text>
+                    <path d="M100 40 L100 70" stroke="#3776AB" stroke-width="2" stroke-dasharray="4" />
+                    <path d="M100 130 L100 160" stroke="#3776AB" stroke-width="2" stroke-dasharray="4" />
+                </svg>
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-2xl font-black mb-4 flex items-center gap-3">
+                    <span class="bg-blue-500 text-black px-2 py-1 rounded text-sm">03</span> THE EMPIRE BUILDER
+                </h2>
+                <p class="text-gray-400 leading-relaxed">
+                    I believe in efficiency. Every project I take on follows a simple Python-inspired logic: <code class="text-blue-400">if profit == True: do_work()</code>. 
+                </p>
+                <p class="text-gray-400 mt-4">
+                    This mindset led me to found <strong>PSBDx</strong>. I'm not just a reseller; I'm the architect. I built the plugins and the systems that allow me to provide premium subscriptions to Bangladesh at the best prices.
+                </p>
+            </div>
+        </section>
+
+        <!-- Chapter 4: The Village (Community) -->
+        <section class="flex flex-col md:flex-row-reverse items-center gap-12">
+            <div class="w-full md:w-1/2 svg-container">
+                <!-- SVG: Open Source Heart/Globe -->
+                <svg width="180" height="180" viewBox="0 0 200 200">
+                    <path d="M100 160 C100 160 30 110 30 70 C30 40 60 30 80 50 L100 70 L120 50 C140 30 170 40 170 70 C170 110 100 160 100 160" fill="none" stroke="#22c55e" stroke-width="3">
+                        <animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite" />
+                    </path>
+                    <text x="100" y="110" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">OPEN_SOURCE</text>
+                </svg>
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-2xl font-black mb-4 flex items-center gap-3">
+                    <span class="bg-green-500 text-black px-2 py-1 rounded text-sm">04</span> GIVING BACK
+                </h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Even as a CEO, I never forget the community. I build custom Discord bots and plugins for free because I believe in the power of open source. 
+                </p>
+                <p class="text-gray-400 mt-4">
+                    Sharing knowledge is how we all grow. Most of my projects are open for the world to see on GitHub, because a true leader lifts others up.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 text-center border-t border-white/5">
+        <h3 class="text-xl font-bold mb-6">READY TO SEE MY JUTSU IN ACTION?</h3>
+        <div class="flex justify-center gap-6">
+            <a href="index.html" class="px-8 py-3 bg-orange-500 text-black font-black rounded-full hover:bg-orange-600 transition-all">VIEW PROJECTS</a>
+            <a href="https://psbdx.rf.gd" target="_blank" class="px-8 py-3 border border-gray-600 rounded-full font-bold hover:bg-white/5 transition-all">VISIT PSBDx</a>
+        </div>
+        <p class="mt-16 text-gray-600 text-xs uppercase tracking-widest font-bold">M. Farhan Hamim // Jan 15, 2011 // Bangladesh</p>
+    </footer>
+
+</body>
+</html>
+
