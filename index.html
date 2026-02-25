@@ -122,9 +122,8 @@
                 FARHAN<span class="text-narutoOrange">.EXE</span>
             </a>
             
-            <div class="hidden md:flex items-center space-x-6 text-sm font-bold uppercase tracking-widest">
-                <a href="https://portfolio.psbdx.rf.gd/" target="_blank" class="hover:text-narutoOrange transition-colors text-narutoOrange">About Me</a>
-                <a href="#about" class="hover:text-narutoOrange transition-colors">Story</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-widest">
+                <a href="https://portfolio.psbdx.rf.gd/about-ceo.html" class="text-narutoOrange hover:scale-110 transition-transform">About Me</a>
                 <a href="#mindset" class="hover:text-narutoOrange transition-colors">Nindō</a>
                 <a href="#projects" class="hover:text-narutoOrange transition-colors">Projects</a>
                 <a href="#contact" class="hover:text-narutoOrange transition-colors">Contact</a>
@@ -148,20 +147,19 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-darkBg z-[60] hidden flex-col items-center justify-center space-y-6 text-3xl font-black opacity-0 transition-all duration-300">
-        <a href="https://portfolio.psbdx.rf.gd/" target="_blank" class="text-narutoOrange mobile-link">ABOUT ME</a>
-        <a href="#about" class="mobile-link">STORY</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-darkBg z-[60] hidden flex-col items-center justify-center space-y-8 text-3xl font-black opacity-0 transition-all duration-300">
+        <a href="https://portfolio.psbdx.rf.gd/about-ceo.html" class="text-narutoOrange mobile-link">ABOUT ME</a>
         <a href="#mindset" class="mobile-link">NINDŌ</a>
         <a href="#projects" class="mobile-link">PROJECTS</a>
         <a href="#contact" class="mobile-link">CONTACT</a>
-        <button id="close-menu" class="text-slate-500 text-sm font-mono mt-10 uppercase tracking-widest">System.Exit()</button>
+        <button id="close-menu" class="text-narutoOrange text-sm font-mono mt-10">CLOSE_SYSTEM.EXIT()</button>
     </div>
 
     <!-- Hero -->
     <section id="home" class="min-h-screen flex flex-col items-center justify-center relative px-6 text-center">
         <div class="reveal">
             <div class="inline-block px-4 py-1 mb-4 rounded-full border border-narutoOrange/20 bg-narutoOrange/5 text-narutoOrange text-[10px] font-bold tracking-widest uppercase">
-                Founder of PSBDx • Python Developer
+                CEO @ PSBDx • Python Developer
             </div>
             <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tight leading-[0.85]">
                 M. FARHAN <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-narutoOrange to-ghoulRed">HAMIM</span>
@@ -180,8 +178,8 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 overflow-hidden">
+    <!-- About Section (Quick Glance) -->
+    <section id="about-glance" class="py-24 px-6 overflow-hidden border-t border-white/5">
         <div class="max-w-6xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="reveal">
@@ -193,7 +191,7 @@
                 <div class="reveal">
                     <h2 class="text-4xl md:text-5xl font-black mb-6 uppercase">INFINITE <span class="text-narutoOrange">CURIOSITY.</span></h2>
                     <p class="text-base md:text-lg text-slate-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        I entered the tech world because I realized there’s an infinite universe of things to learn. Born in 2011, currently a Class 10 student, I've founded PSBDx and dedicated myself to open-source development. 🍃
+                        I entered the tech world because I realized there’s an infinite universe of things to learn. I'm a Class 10 student and the Founder of PSBDx.
                     </p>
                     <div class="grid grid-cols-2 gap-6 mb-10">
                         <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm">
@@ -202,24 +200,24 @@
                         </div>
                         <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm">
                             <span class="block text-4xl font-black text-pythonBlue counter" data-target="10">0</span>
-                            <span class="text-[10px] font-bold uppercase text-slate-400">Grade Level</span>
+                            <span class="text-[10px] font-bold uppercase text-slate-400">Grade 10</span>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://www.facebook.com/mfh.AnimeTalkwithFarhan" target="_blank" class="px-5 py-3 bg-fbBlue text-white rounded-xl font-bold flex items-center gap-2 text-xs active:scale-95 transition-transform"><i class="fab fa-facebook"></i> Anime Page</a>
-                        <a href="https://www.instagram.com/animetwfarhan?igsh=bGMzYnpveGJhNnVm" target="_blank" class="px-5 py-3 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 text-white rounded-xl font-bold flex items-center gap-2 text-xs active:scale-95 transition-transform"><i class="fab fa-instagram"></i> Instagram</a>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://portfolio.psbdx.rf.gd/about-ceo.html" class="px-8 py-3 bg-narutoOrange text-white rounded-xl font-bold text-center active:scale-95 transition-transform">Read My Full Bio</a>
+                        <a href="https://www.facebook.com/psbdx" target="_blank" class="px-8 py-3 bg-fbBlue text-white rounded-xl font-bold text-center flex items-center justify-center gap-2 active:scale-95 transition-transform"><i class="fab fa-facebook"></i> PSBDx FB</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Terminal Section -->
+    <!-- Terminal -->
     <section id="mindset" class="py-24 px-6 bg-slate-900 text-white">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-12 reveal">
                 <h2 class="text-3xl font-black mb-2 uppercase">TERMINAL_<span class="text-pythonBlue">MINDSET</span></h2>
-                <p class="text-gray-500 uppercase tracking-widest text-[10px]">Decision making algorithm.</p>
+                <p class="text-gray-500 uppercase tracking-widest text-[10px]">My decision logic script.</p>
             </div>
 
             <div class="reveal rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
@@ -228,22 +226,20 @@
                 </div>
                 <div class="bg-[#1e1e2e] p-8 font-mono text-xs md:text-sm relative">
 <pre class="text-gray-300 leading-relaxed">
-<span class="text-purple-400">def</span> <span class="text-blue-400">evaluate_profit</span>(task):
-    <span class="text-pythonBlue">is_valuable</span> = check_value(task)
+<span class="text-purple-400">def</span> <span class="text-blue-400">process_work</span>(task):
+    <span class="text-pythonBlue">profit</span> = calculate_value(task)
     
-    <span class="text-purple-400">if</span> <span class="text-pythonBlue">is_valuable</span> == <span class="text-orange-400">True</span>:
-        <span class="text-purple-400">return</span> <span class="text-green-400">"EXECUTE_TASK()"</span>
+    <span class="text-purple-400">if</span> <span class="text-pythonBlue">profit</span> == <span class="text-orange-400">True</span>:
+        <span class="text-purple-400">return</span> <span class="text-green-400">"DO_THE_WORK()"</span>
     <span class="text-purple-400">else</span>:
         <span class="text-purple-400">return</span> <span class="text-red-400">"IGNORE_TASK()"</span>
 </pre>
                     <div id="terminal-output" class="mt-6 pt-6 border-t border-white/10 text-green-400 hidden">
-                        > SYSTEM_BOOT_SEQUENCE...<br>
-                        > profit == True<br>
-                        > STATUS: <span class="bg-green-500 text-black px-2 font-bold">EMPIRE_GROWTH_READY 🚀</span>
+                        > SYSTEM ANALYZING...<br>
+                        > RESULT: <span class="bg-green-500 text-black px-2 font-bold uppercase">Empire Growth True</span>
                     </div>
-                    
                     <button onclick="runCode()" class="mt-6 w-full py-3 bg-pythonBlue text-white font-bold rounded-xl active:bg-blue-600 transition-colors">
-                        RUN_PROFIT_SCRIPT.PY
+                        RUN_LOGIC.EXE
                     </button>
                 </div>
             </div>
@@ -254,39 +250,39 @@
     <section id="projects" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl font-black mb-2">MY <span class="text-narutoOrange">JUTSU</span> TOOLS</h2>
-                <p class="text-slate-500 text-sm">Open-source & Personal projects.</p>
+                <h2 class="text-3xl font-black mb-2 uppercase">NINJA <span class="text-narutoOrange">JUTSU</span></h2>
+                <p class="text-slate-500 text-sm">Open-source & Business tools.</p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl" data-tilt data-tilt-max="5">
+                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl transition-all" data-tilt data-tilt-max="5">
                     <i class="fas fa-bolt text-3xl text-narutoOrange mb-6"></i>
                     <h3 class="text-xl font-black mb-3">PSBDx Empire</h3>
-                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">Founder & CEO. Affordable premium digital subscriptions for the BD community.</p>
-                    <a href="https://psbdx.rf.gd" target="_blank" class="font-bold text-xs text-narutoOrange uppercase">ACCESS SITE &rarr;</a>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">Founder & CEO. Premium digital subscriptions at fair prices for BD users.</p>
+                    <a href="https://psbdx.rf.gd" target="_blank" class="font-bold text-xs text-narutoOrange uppercase tracking-widest">ACCESS SITE &rarr;</a>
                 </div>
 
-                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl" data-tilt data-tilt-max="5">
+                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl transition-all" data-tilt data-tilt-max="5">
                     <i class="fab fa-python text-3xl text-pythonBlue mb-6"></i>
                     <h3 class="text-xl font-black mb-3">Anime Master</h3>
-                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">Python-based Discord bot with MAL integration and auto-translation.</p>
-                    <a href="https://github.com/psbdx-pvt-ltd/Anime-Master-bot" target="_blank" class="font-bold text-xs text-pythonBlue uppercase">GIT_CLONE &rarr;</a>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">Python-powered Discord bot with MAL & auto-Bangla translation.</p>
+                    <a href="https://github.com/psbdx-pvt-ltd/Anime-Master-bot" target="_blank" class="font-bold text-xs text-pythonBlue uppercase tracking-widest">GIT_PULL &rarr;</a>
                 </div>
 
-                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl" data-tilt data-tilt-max="5">
+                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl transition-all" data-tilt data-tilt-max="5">
                     <i class="fas fa-plug text-3xl text-ghoulRed mb-6"></i>
                     <h3 class="text-xl font-black mb-3">Custom Plugins</h3>
-                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">I build custom open-source tools and bots for the community for free.</p>
-                    <a href="https://x.com/M_Farhan_Hamim" target="_blank" class="font-bold text-xs text-ghoulRed uppercase">REQUEST ON X &rarr;</a>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">Building custom solutions and bots for the community entirely for free.</p>
+                    <a href="https://x.com/M_Farhan_Hamim" target="_blank" class="font-bold text-xs text-ghoulRed uppercase tracking-widest">DM ON X &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Footer -->
+    <!-- Footer -->
     <footer id="contact" class="py-24 px-6 bg-slate-900 text-white text-center">
         <div class="reveal max-w-5xl mx-auto">
-            <h2 class="text-5xl md:text-7xl font-black mb-10 tracking-tighter uppercase leading-[0.9]">Let's <br> <span class="text-narutoOrange">Chat.</span></h2>
+            <h2 class="text-5xl md:text-7xl font-black mb-10 tracking-tighter uppercase leading-[0.9]">Connect <br> <span class="text-narutoOrange">With Me.</span></h2>
             <a href="mailto:mfhamim95@gmail.com" class="text-xl md:text-3xl font-bold hover:text-narutoOrange transition-colors border-b-2 border-narutoOrange">
                 mfhamim95@gmail.com
             </a>
@@ -297,7 +293,6 @@
                 <a href="https://www.instagram.com/animetwfarhan?igsh=bGMzYnpveGJhNnVm" target="_blank" class="w-14 h-14 rounded-2xl bg-instaPink text-white flex items-center justify-center text-2xl shadow-lg hover:-translate-y-2 transition-transform"><i class="fab fa-instagram"></i></a>
                 <a href="https://youtube.com/@animetalkwithfarhan?si=MYlWTwsH7zcc6Qp7" target="_blank" class="w-14 h-14 rounded-2xl glass flex items-center justify-center text-2xl hover:bg-red-600 transition-all"><i class="fab fa-youtube"></i></a>
                 <a href="https://github.com/psbdx-pvt-ltd" target="_blank" class="w-14 h-14 rounded-2xl glass flex items-center justify-center text-2xl hover:bg-white hover:text-black transition-all"><i class="fab fa-github"></i></a>
-                <a href="https://discord.com/invite/kVy78m9DZy" target="_blank" class="w-14 h-14 rounded-2xl glass flex items-center justify-center text-2xl hover:bg-discordBlurple transition-all"><i class="fab fa-discord"></i></a>
             </div>
 
             <p class="mt-20 text-gray-500 font-bold tracking-widest text-[10px] uppercase">
@@ -334,7 +329,9 @@
             mouse.x = e.touches[0].clientX;
             mouse.y = e.touches[0].clientY;
         });
-        window.addEventListener('touchend', () => { mouse.x = null; mouse.y = null; });
+        window.addEventListener('touchend', () => {
+            mouse.x = null; mouse.y = null;
+        });
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -346,7 +343,9 @@
                 p.x += p.speedX; p.y += p.speedY;
                 if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
                 if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
                 ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+
                 if (mouse.x) {
                     let dx = mouse.x - p.x; let dy = mouse.y - p.y;
                     let dist = Math.sqrt(dx*dx + dy*dy);
@@ -364,7 +363,7 @@
         window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
         initCanvas(); animate();
 
-        // Cursor Dot (Desktop only logic)
+        // Cursor Logic
         const cursorDot = document.getElementById('cursor-dot');
         const cursorOutline = document.getElementById('cursor-outline');
         window.addEventListener('mousemove', e => {
@@ -372,13 +371,13 @@
             cursorOutline.style.left = e.clientX + 'px'; cursorOutline.style.top = e.clientY + 'px';
         });
 
-        // Chakra Scroll bar
+        // Chakra Scroll
         window.addEventListener('scroll', () => {
             const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             document.getElementById("chakra-bar").style.width = scrolled + "%";
         });
 
-        // Theme Toggle logic
+        // Theme Toggle
         const toggles = [document.getElementById('theme-toggle'), document.getElementById('mobile-theme-toggle')];
         toggles.forEach(t => {
             t.onclick = () => {
@@ -388,47 +387,47 @@
         });
         if (localStorage.theme === 'dark') document.documentElement.classList.add('dark');
 
-        // Terminal run logic
+        // Terminal run
         function runCode() {
             if (window.navigator.vibrate) window.navigator.vibrate(50);
             document.getElementById('terminal-output').classList.remove('hidden');
         }
 
-        // Mobile Menu logic
+        // Menu
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu');
-        const menuOverlay = document.getElementById('mobile-menu');
+        const menu = document.getElementById('mobile-menu');
         menuBtn.onclick = () => {
-            menuOverlay.classList.remove('hidden');
-            setTimeout(() => { menuOverlay.classList.remove('opacity-0'); menuOverlay.classList.add('opacity-100'); }, 10);
+            menu.classList.remove('hidden');
+            setTimeout(() => { menu.classList.remove('opacity-0'); menu.classList.add('opacity-100'); }, 10);
         };
         const hideMenu = () => {
-            menuOverlay.classList.remove('opacity-100'); menuOverlay.classList.add('opacity-0');
-            setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+            menu.classList.remove('opacity-100'); menu.classList.add('opacity-0');
+            setTimeout(() => menu.classList.add('hidden'), 300);
         };
         closeBtn.onclick = hideMenu;
         document.querySelectorAll('.mobile-link').forEach(l => l.onclick = hideMenu);
 
-        // Typewriter Logic
-        const phrases = ["Founder & CEO of PSBDx.", "Building my Empire.", "Python Developer.", "Infinite Learner."];
-        let pIdx = 0, cIdx = 0;
+        // Typewriter
+        const words = ["Founder of PSBDx.", "Building my Empire.", "Python Developer.", "Anime Content Creator."];
+        let wIdx = 0, cIdx = 0;
         function type() {
-            if (cIdx < phrases[pIdx].length) {
-                document.getElementById('typewriter').innerHTML += phrases[pIdx].charAt(cIdx);
+            if (cIdx < words[wIdx].length) {
+                document.getElementById('typewriter').innerHTML += words[wIdx].charAt(cIdx);
                 cIdx++; setTimeout(type, 80);
             } else { setTimeout(erase, 2000); }
         }
         function erase() {
             if (cIdx > 0) {
-                document.getElementById('typewriter').innerHTML = phrases[pIdx].substring(0, cIdx - 1);
+                document.getElementById('typewriter').innerHTML = words[wIdx].substring(0, cIdx - 1);
                 cIdx--; setTimeout(erase, 40);
-            } else { pIdx = (pIdx + 1) % phrases.length; setTimeout(type, 500); }
+            } else { wIdx = (wIdx + 1) % words.length; setTimeout(type, 500); }
         }
         type();
 
-        // Intersection Observer for animations
-        const obs = new IntersectionObserver(ents => {
-            ents.forEach(e => {
+        // Reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
                 if (e.isIntersecting) {
                     e.target.classList.add('active');
                     e.target.querySelectorAll('.counter').forEach(c => {
@@ -443,7 +442,7 @@
                 }
             });
         }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+        document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
     </script>
 </body>
 </html>
