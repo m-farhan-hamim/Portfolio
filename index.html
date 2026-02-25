@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Farhan Hamim | Founder of PSBDx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#08080a',
+                        darkCard: '#121215',
+                        lightBg: '#f0f2f5',
+                        lightCard: '#ffffff',
+                        narutoOrange: '#ff7b00',
+                        ghoulRed: '#dc2626',
+                        pythonBlue: '#3776AB',
+                        discordBlurple: '#5865F2',
+                        fbBlue: '#1877F2',
+                        instaPink: '#E4405F',
+                        xBlack: '#000000'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap');
+
+        body {
+            transition: background-color 0.4s ease;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Hide custom cursor on touch devices */
+        @media (pointer: coarse) {
+            .cursor-dot, .cursor-outline { display: none !important; }
+        }
+
+        /* Chakra Scroll Progress */
+        #chakra-bar {
+            position: fixed;
+            top: 0; left: 0; height: 4px;
+            background: linear-gradient(90deg, #ff7b00, #dc2626);
+            z-index: 100; width: 0%;
+            box-shadow: 0 0 15px #ff7b00;
+        }
+
+        .cursor-dot, .cursor-outline {
+            position: fixed; top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%; z-index: 9999;
+            pointer-events: none;
+            transition: transform 0.1s ease-out, opacity 0.3s ease;
+        }
+        .cursor-dot { width: 8px; height: 8px; background-color: #ff7b00; }
+        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(255, 123, 0, 0.5); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        #bg-canvas {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1; pointer-events: none;
+        }
+
+        /* Mobile Social Dock */
+        .mobile-dock {
+            position: fixed; bottom: 20px; left: 50%;
+            transform: translateX(-50%);
+            display: flex; gap: 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            z-index: 50;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-lightBg text-slate-800 dark:bg-darkBg dark:text-gray-200 antialiased selection:bg-narutoOrange selection:text-white">
+
+    <div id="chakra-bar"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Mobile-Only Social Dock -->
+    <div class="mobile-dock md:hidden">
+        <a href="https://www.facebook.com/psbdx" target="_blank" class="text-white hover:text-narutoOrange"><i class="fab fa-facebook-f text-xl"></i></a>
+        <a href="https://x.com/M_Farhan_Hamim" target="_blank" class="text-white hover:text-narutoOrange"><i class="fab fa-x-twitter text-xl"></i></a>
+        <a href="https://www.instagram.com/animetwfarhan?igsh=bGMzYnpveGJhNnVm" target="_blank" class="text-white hover:text-narutoOrange"><i class="fab fa-instagram text-xl"></i></a>
+        <a href="https://psbdx.rf.gd" target="_blank" class="text-white hover:text-narutoOrange"><i class="fas fa-globe text-xl"></i></a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-black tracking-tighter">
+                FARHAN<span class="text-narutoOrange">.EXE</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-bold uppercase tracking-widest">
+                <a href="https://portfolio.psbdx.rf.gd/" target="_blank" class="hover:text-narutoOrange transition-colors text-narutoOrange">About Me</a>
+                <a href="#about" class="hover:text-narutoOrange transition-colors">Story</a>
+                <a href="#mindset" class="hover:text-narutoOrange transition-colors">Nindō</a>
+                <a href="#projects" class="hover:text-narutoOrange transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-narutoOrange transition-colors">Contact</a>
+                
+                <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-200 dark:bg-white/5 text-slate-700 dark:text-yellow-400">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-3 md:hidden">
+                <button id="mobile-theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-yellow-400">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <button class="p-2" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-darkBg z-[60] hidden flex-col items-center justify-center space-y-6 text-3xl font-black opacity-0 transition-all duration-300">
+        <a href="https://portfolio.psbdx.rf.gd/" target="_blank" class="text-narutoOrange mobile-link">ABOUT ME</a>
+        <a href="#about" class="mobile-link">STORY</a>
+        <a href="#mindset" class="mobile-link">NINDŌ</a>
+        <a href="#projects" class="mobile-link">PROJECTS</a>
+        <a href="#contact" class="mobile-link">CONTACT</a>
+        <button id="close-menu" class="text-slate-500 text-sm font-mono mt-10 uppercase tracking-widest">System.Exit()</button>
+    </div>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center relative px-6 text-center">
+        <div class="reveal">
+            <div class="inline-block px-4 py-1 mb-4 rounded-full border border-narutoOrange/20 bg-narutoOrange/5 text-narutoOrange text-[10px] font-bold tracking-widest uppercase">
+                Founder of PSBDx • Python Developer
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tight leading-[0.85]">
+                M. FARHAN <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-narutoOrange to-ghoulRed">HAMIM</span>
+            </h1>
+            <div class="h-12 md:h-8 mb-8">
+                <p class="text-lg md:text-2xl font-mono text-slate-500 dark:text-gray-400" id="typewriter"></p>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="px-8 py-4 bg-narutoOrange text-white font-black rounded-2xl shadow-xl shadow-narutoOrange/20 active:scale-95 transition-transform">
+                    VIEW PROJECTS
+                </a>
+                <a href="https://psbdx.rf.gd" target="_blank" class="px-8 py-4 border-2 border-slate-300 dark:border-white/10 font-black rounded-2xl active:scale-95 transition-transform">
+                    VISIT EMPIRE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="relative group mx-auto max-w-sm">
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-narutoOrange to-ghoulRed rounded-[2rem] blur-2xl opacity-20"></div>
+                        <img src="https://farhanhamim.rf.gd/wp-content/uploads/2025/09/IMG-20250823-WA000012.jpg" class="relative rounded-[2rem] border-2 border-white dark:border-white/5 shadow-2xl z-10 w-full aspect-square object-cover" alt="Farhan">
+                    </div>
+                </div>
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 uppercase">INFINITE <span class="text-narutoOrange">CURIOSITY.</span></h2>
+                    <p class="text-base md:text-lg text-slate-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        I entered the tech world because I realized there’s an infinite universe of things to learn. Born in 2011, currently a Class 10 student, I've founded PSBDx and dedicated myself to open-source development. 🍃
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm">
+                            <span class="block text-4xl font-black text-narutoOrange counter" data-target="15">0</span>
+                            <span class="text-[10px] font-bold uppercase text-slate-400">Years Old</span>
+                        </div>
+                        <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm">
+                            <span class="block text-4xl font-black text-pythonBlue counter" data-target="10">0</span>
+                            <span class="text-[10px] font-bold uppercase text-slate-400">Grade Level</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.facebook.com/mfh.AnimeTalkwithFarhan" target="_blank" class="px-5 py-3 bg-fbBlue text-white rounded-xl font-bold flex items-center gap-2 text-xs active:scale-95 transition-transform"><i class="fab fa-facebook"></i> Anime Page</a>
+                        <a href="https://www.instagram.com/animetwfarhan?igsh=bGMzYnpveGJhNnVm" target="_blank" class="px-5 py-3 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 text-white rounded-xl font-bold flex items-center gap-2 text-xs active:scale-95 transition-transform"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Section -->
+    <section id="mindset" class="py-24 px-6 bg-slate-900 text-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-black mb-2 uppercase">TERMINAL_<span class="text-pythonBlue">MINDSET</span></h2>
+                <p class="text-gray-500 uppercase tracking-widest text-[10px]">Decision making algorithm.</p>
+            </div>
+
+            <div class="reveal rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <div class="terminal-header">
+                    <div class="terminal-dot bg-red-500"></div><div class="terminal-dot bg-yellow-500"></div><div class="terminal-dot bg-green-500"></div>
+                </div>
+                <div class="bg-[#1e1e2e] p-8 font-mono text-xs md:text-sm relative">
+<pre class="text-gray-300 leading-relaxed">
+<span class="text-purple-400">def</span> <span class="text-blue-400">evaluate_profit</span>(task):
+    <span class="text-pythonBlue">is_valuable</span> = check_value(task)
+    
+    <span class="text-purple-400">if</span> <span class="text-pythonBlue">is_valuable</span> == <span class="text-orange-400">True</span>:
+        <span class="text-purple-400">return</span> <span class="text-green-400">"EXECUTE_TASK()"</span>
+    <span class="text-purple-400">else</span>:
+        <span class="text-purple-400">return</span> <span class="text-red-400">"IGNORE_TASK()"</span>
+</pre>
+                    <div id="terminal-output" class="mt-6 pt-6 border-t border-white/10 text-green-400 hidden">
+                        > SYSTEM_BOOT_SEQUENCE...<br>
+                        > profit == True<br>
+                        > STATUS: <span class="bg-green-500 text-black px-2 font-bold">EMPIRE_GROWTH_READY 🚀</span>
+                    </div>
+                    
+                    <button onclick="runCode()" class="mt-6 w-full py-3 bg-pythonBlue text-white font-bold rounded-xl active:bg-blue-600 transition-colors">
+                        RUN_PROFIT_SCRIPT.PY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-black mb-2">MY <span class="text-narutoOrange">JUTSU</span> TOOLS</h2>
+                <p class="text-slate-500 text-sm">Open-source & Personal projects.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl" data-tilt data-tilt-max="5">
+                    <i class="fas fa-bolt text-3xl text-narutoOrange mb-6"></i>
+                    <h3 class="text-xl font-black mb-3">PSBDx Empire</h3>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">Founder & CEO. Affordable premium digital subscriptions for the BD community.</p>
+                    <a href="https://psbdx.rf.gd" target="_blank" class="font-bold text-xs text-narutoOrange uppercase">ACCESS SITE &rarr;</a>
+                </div>
+
+                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl" data-tilt data-tilt-max="5">
+                    <i class="fab fa-python text-3xl text-pythonBlue mb-6"></i>
+                    <h3 class="text-xl font-black mb-3">Anime Master</h3>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">Python-based Discord bot with MAL integration and auto-translation.</p>
+                    <a href="https://github.com/psbdx-pvt-ltd/Anime-Master-bot" target="_blank" class="font-bold text-xs text-pythonBlue uppercase">GIT_CLONE &rarr;</a>
+                </div>
+
+                <div class="reveal bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-200 dark:border-white/5 shadow-xl" data-tilt data-tilt-max="5">
+                    <i class="fas fa-plug text-3xl text-ghoulRed mb-6"></i>
+                    <h3 class="text-xl font-black mb-3">Custom Plugins</h3>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-6">I build custom open-source tools and bots for the community for free.</p>
+                    <a href="https://x.com/M_Farhan_Hamim" target="_blank" class="font-bold text-xs text-ghoulRed uppercase">REQUEST ON X &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="py-24 px-6 bg-slate-900 text-white text-center">
+        <div class="reveal max-w-5xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black mb-10 tracking-tighter uppercase leading-[0.9]">Let's <br> <span class="text-narutoOrange">Chat.</span></h2>
+            <a href="mailto:mfhamim95@gmail.com" class="text-xl md:text-3xl font-bold hover:text-narutoOrange transition-colors border-b-2 border-narutoOrange">
+                mfhamim95@gmail.com
+            </a>
+
+            <div class="flex flex-wrap justify-center gap-4 mt-16">
+                <a href="https://www.facebook.com/psbdx" target="_blank" class="w-14 h-14 rounded-2xl bg-fbBlue text-white flex items-center justify-center text-2xl shadow-lg hover:-translate-y-2 transition-transform"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/M_Farhan_Hamim" target="_blank" class="w-14 h-14 rounded-2xl bg-xBlack text-white flex items-center justify-center text-2xl shadow-lg hover:-translate-y-2 transition-transform border border-white/20"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/animetwfarhan?igsh=bGMzYnpveGJhNnVm" target="_blank" class="w-14 h-14 rounded-2xl bg-instaPink text-white flex items-center justify-center text-2xl shadow-lg hover:-translate-y-2 transition-transform"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@animetalkwithfarhan?si=MYlWTwsH7zcc6Qp7" target="_blank" class="w-14 h-14 rounded-2xl glass flex items-center justify-center text-2xl hover:bg-red-600 transition-all"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/psbdx-pvt-ltd" target="_blank" class="w-14 h-14 rounded-2xl glass flex items-center justify-center text-2xl hover:bg-white hover:text-black transition-all"><i class="fab fa-github"></i></a>
+                <a href="https://discord.com/invite/kVy78m9DZy" target="_blank" class="w-14 h-14 rounded-2xl glass flex items-center justify-center text-2xl hover:bg-discordBlurple transition-all"><i class="fab fa-discord"></i></a>
+            </div>
+
+            <p class="mt-20 text-gray-500 font-bold tracking-widest text-[10px] uppercase">
+                M. Farhan Hamim • Founder of PSBDx • © 2026
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Particle Engine
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 120 };
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const count = window.innerWidth < 768 ? 35 : 75;
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.5 + 0.5,
+                    speedX: Math.random() * 0.6 - 0.3,
+                    speedY: Math.random() * 0.6 - 0.3
+                });
+            }
+        }
+
+        // Chakra Touch Interaction for Mobile
+        window.addEventListener('touchstart', e => {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        });
+        window.addEventListener('touchend', () => { mouse.x = null; mouse.y = null; });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const isDark = document.documentElement.classList.contains('dark');
+            ctx.fillStyle = isDark ? 'rgba(255, 123, 0, 0.2)' : 'rgba(0, 0, 0, 0.05)';
+            ctx.strokeStyle = isDark ? 'rgba(255, 123, 0, 0.08)' : 'rgba(0, 0, 0, 0.04)';
+
+            particles.forEach((p) => {
+                p.x += p.speedX; p.y += p.speedY;
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+                if (mouse.x) {
+                    let dx = mouse.x - p.x; let dy = mouse.y - p.y;
+                    let dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < mouse.radius) {
+                        ctx.lineWidth = 1;
+                        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+                        p.x += dx * 0.02; p.y += dy * 0.02;
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
+        initCanvas(); animate();
+
+        // Cursor Dot (Desktop only logic)
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        window.addEventListener('mousemove', e => {
+            cursorDot.style.left = e.clientX + 'px'; cursorDot.style.top = e.clientY + 'px';
+            cursorOutline.style.left = e.clientX + 'px'; cursorOutline.style.top = e.clientY + 'px';
+        });
+
+        // Chakra Scroll bar
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById("chakra-bar").style.width = scrolled + "%";
+        });
+
+        // Theme Toggle logic
+        const toggles = [document.getElementById('theme-toggle'), document.getElementById('mobile-theme-toggle')];
+        toggles.forEach(t => {
+            t.onclick = () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            };
+        });
+        if (localStorage.theme === 'dark') document.documentElement.classList.add('dark');
+
+        // Terminal run logic
+        function runCode() {
+            if (window.navigator.vibrate) window.navigator.vibrate(50);
+            document.getElementById('terminal-output').classList.remove('hidden');
+        }
+
+        // Mobile Menu logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const menuOverlay = document.getElementById('mobile-menu');
+        menuBtn.onclick = () => {
+            menuOverlay.classList.remove('hidden');
+            setTimeout(() => { menuOverlay.classList.remove('opacity-0'); menuOverlay.classList.add('opacity-100'); }, 10);
+        };
+        const hideMenu = () => {
+            menuOverlay.classList.remove('opacity-100'); menuOverlay.classList.add('opacity-0');
+            setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+        };
+        closeBtn.onclick = hideMenu;
+        document.querySelectorAll('.mobile-link').forEach(l => l.onclick = hideMenu);
+
+        // Typewriter Logic
+        const phrases = ["Founder & CEO of PSBDx.", "Building my Empire.", "Python Developer.", "Infinite Learner."];
+        let pIdx = 0, cIdx = 0;
+        function type() {
+            if (cIdx < phrases[pIdx].length) {
+                document.getElementById('typewriter').innerHTML += phrases[pIdx].charAt(cIdx);
+                cIdx++; setTimeout(type, 80);
+            } else { setTimeout(erase, 2000); }
+        }
+        function erase() {
+            if (cIdx > 0) {
+                document.getElementById('typewriter').innerHTML = phrases[pIdx].substring(0, cIdx - 1);
+                cIdx--; setTimeout(erase, 40);
+            } else { pIdx = (pIdx + 1) % phrases.length; setTimeout(type, 500); }
+        }
+        type();
+
+        // Intersection Observer for animations
+        const obs = new IntersectionObserver(ents => {
+            ents.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('active');
+                    e.target.querySelectorAll('.counter').forEach(c => {
+                        const target = +c.getAttribute('data-target');
+                        let curr = 0; const inc = target/30;
+                        const upd = () => {
+                            if(curr < target) { curr += inc; c.innerText = Math.ceil(curr); setTimeout(upd, 40); }
+                            else { c.innerText = target; }
+                        };
+                        upd();
+                    });
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+    </script>
+</body>
+</html>
+
